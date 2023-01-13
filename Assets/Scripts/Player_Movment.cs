@@ -8,7 +8,6 @@ public class Player_Movment : MonoBehaviour
     public float speed = 1.5f;
     public float rotationSpeed = 5f;
 
-    public GameObject gameOverPanel;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +19,7 @@ public class Player_Movment : MonoBehaviour
     {
          Movment();
          Clamp();
+         
     }
      void Movment() {
  if (Input.GetKey(KeyCode.RightArrow)) {
@@ -42,5 +42,17 @@ public class Player_Movment : MonoBehaviour
         Vector3 pos = transform.position;
         pos.x = Mathf.Clamp(pos.x,-0.94f,0.78f);
         transform.position = pos;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision) {
+        if (collision.gameObject.tag == "Rock"){
+               Time.timeScale = 0 ;
+               //gameOverPanel.SetActive(true);
+        }
+        if (collision.gameObject.tag == "Rock"){
+               //CoinSound.Play();
+               //score_Value.score += 10;
+               Destroy(collision.gameObject);
+        }
     }
 }
