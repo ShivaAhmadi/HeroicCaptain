@@ -13,6 +13,6 @@ public class River_Movement : MonoBehaviour
 
     void Update()
     {
-        meshRenderer.material.mainTextureOffset += new Vector2(0, rivSpeed * Time.deltaTime);        
+        meshRenderer.material.mainTextureOffset += new Vector2(0, rivSpeed * Time.deltaTime);    
     }
 }

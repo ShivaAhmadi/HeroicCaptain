@@ -7,14 +7,13 @@ public class Player_Movment : MonoBehaviour
     public Transform transform;
     public float speed = 1.5f;
     public float rotationSpeed = 5f;
+    public Score_Manager food_score;
 
-    // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
          Movment();
@@ -40,7 +39,7 @@ public class Player_Movment : MonoBehaviour
     void Clamp() {
 
         Vector3 pos = transform.position;
-        pos.x = Mathf.Clamp(pos.x,-0.94f,0.78f);
+        pos.x = Mathf.Clamp(pos.x,-1.56f,1.25f);
         transform.position = pos;
     }
 
@@ -49,9 +48,9 @@ public class Player_Movment : MonoBehaviour
                Time.timeScale = 0 ;
                //gameOverPanel.SetActive(true);
         }
-        if (collision.gameObject.tag == "Rock"){
+        if (collision.gameObject.tag == "Food"){
                //CoinSound.Play();
-               //score_Value.score += 10;
+               food_score.foodScore += 10;
                Destroy(collision.gameObject);
         }
     }

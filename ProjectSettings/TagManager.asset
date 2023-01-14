@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Rock
+  - Food
   layers:
   - Default
   - TransparentFX
