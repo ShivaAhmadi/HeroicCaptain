@@ -19,7 +19,7 @@ public class Score_Manager : MonoBehaviour
     void Start()
     {
         StartCoroutine(Score());
-        //highScore = PlayerPrefs.GetInt("high_score" , 0);
+        highScore = PlayerPrefs.GetInt("high_score" , 0);
         //HighScoreText.text = "High Score: " + highScore.ToString();
         //lastScoreText.text = "Last Score: " + lastScore.ToString();
         
@@ -29,11 +29,11 @@ public class Score_Manager : MonoBehaviour
     {
         TotalscoreText.text = totalScore.ToString();
         FoodscoreText.text = foodScore.ToString();
-        // if (score > highScore) {
-        //     highScore = score;
-        //     PlayerPrefs.SetInt("high_score", highScore);
+        if (totalScore > highScore) {
+            highScore = totalScore;
+            PlayerPrefs.SetInt("high_score", highScore);
         
-        // }
+        }
         
     }
     IEnumerator Score() {
@@ -41,7 +41,7 @@ public class Score_Manager : MonoBehaviour
             yield return new WaitForSeconds(2);
             totalScore = totalScore + 1;
             foodScore=foodScore-1;
-            //lastScore = score;
+            lastScore = totalScore;
         }
     }
     IEnumerator Reload() {

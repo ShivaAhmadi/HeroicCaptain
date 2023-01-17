@@ -8,9 +8,12 @@ public class Player_Movment : MonoBehaviour
     public float speed = 1.5f;
     public float rotationSpeed = 5f;
     public Score_Manager food_score;
+    public GameObject gameOverPanel;
 
     void Start()
     {
+        gameOverPanel.SetActive(false);
+        Time.timeScale = 1;
         
     }
 
@@ -18,6 +21,10 @@ public class Player_Movment : MonoBehaviour
     {
          Movment();
          Clamp();
+        if(food_score.foodScore<=0){
+            Time.timeScale = 0 ;
+            gameOverPanel.SetActive(true);
+        }
          
     }
      void Movment() {
@@ -46,10 +53,9 @@ public class Player_Movment : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.tag == "Rock"){
                Time.timeScale = 0 ;
-               //gameOverPanel.SetActive(true);
+               gameOverPanel.SetActive(true);
         }
         if (collision.gameObject.tag == "Food"){
-               //CoinSound.Play();
                food_score.foodScore += 10;
                Destroy(collision.gameObject);
         }
