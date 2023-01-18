@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Rock
   - Food
+  - PlayerSpear
   layers:
   - Default
   - TransparentFX
