@@ -14,6 +14,10 @@ public class Player_Movment : MonoBehaviour
     public GameObject PausePanel;
     public Button LeftMoveButton;
     public Button RightMoveButton;
+    public Button Shooting;
+
+    public GameObject SpearPrefab;
+    public float SpearSpeed;
 
     void Start()
     {
@@ -21,6 +25,8 @@ public class Player_Movment : MonoBehaviour
 		btnLeft.onClick.AddListener(LeftMovement);
         Button btnRight = RightMoveButton.GetComponent<Button>();
 		btnRight.onClick.AddListener(RightMovement);
+        Button btnShooting = Shooting.GetComponent<Button>();
+		btnShooting.onClick.AddListener(ShootingMove);
 
         gameOverPanel.SetActive(false);
         PausePanel.SetActive(false);
@@ -48,6 +54,14 @@ public class Player_Movment : MonoBehaviour
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0,0,57), rotationSpeed * Time.deltaTime);
 	}
 
+    public void ShootingMove(){
+            GameObject SpearInstance=Instantiate(SpearPrefab);
+            SpearInstance.transform.SetParent(transform.parent);
+            SpearInstance.transform.position=transform.position;
+            SpearInstance.GetComponent<Rigidbody2D>().velocity=new Vector3(0,SpearSpeed,transform.position.z);
+            Destroy(SpearInstance,5);
+    }
+
     
     void Clamp() {
 
@@ -66,4 +80,5 @@ public class Player_Movment : MonoBehaviour
                Destroy(collision.gameObject);
         }
     }
+
 }
