@@ -25,7 +25,7 @@ public class Food_Spawner : MonoBehaviour
 
     IEnumerator SpawnFoods() {
        while(true){
-            int time = Random.Range(4,10);
+            int time = Random.Range(4,9);
             yield return new WaitForSeconds(time);
             Foods();
        }

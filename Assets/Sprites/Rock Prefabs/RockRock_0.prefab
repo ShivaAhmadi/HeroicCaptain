@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transformRock: {fileID: 0}
-  speed: 5
+  speed: 4
 --- !u!60 &7260026760995000714
 PolygonCollider2D:
   m_ObjectHideFlags: 0

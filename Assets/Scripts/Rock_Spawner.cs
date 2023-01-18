@@ -26,8 +26,9 @@ public class Rock_Spawner : MonoBehaviour
 
     IEnumerator SpawnRocks() {
        while(true){
-             yield return new WaitForSeconds(2);
-               Rocks();
+            int time = Random.Range(1,7);
+            yield return new WaitForSeconds(time); 
+            Rocks();
        }
        
     }
