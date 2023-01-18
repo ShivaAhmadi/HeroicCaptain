@@ -33,6 +33,10 @@ public class Player_Movment : MonoBehaviour
         Time.timeScale = 1;
         
     }
+            
+       
+
+
 
     void Update()
     {
@@ -80,5 +84,6 @@ public class Player_Movment : MonoBehaviour
                Destroy(collision.gameObject);
         }
     }
-
 }
+
+    
