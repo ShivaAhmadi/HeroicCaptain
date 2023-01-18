@@ -8,11 +8,14 @@ public class Player_Movment : MonoBehaviour
     public float speed = 1.5f;
     public float rotationSpeed = 5f;
     public Score_Manager food_score;
+    public Score_Manager total_Score;
     public GameObject gameOverPanel;
+    public GameObject PausePanel;
 
     void Start()
     {
         gameOverPanel.SetActive(false);
+        PausePanel.SetActive(false);
         Time.timeScale = 1;
         
     }
@@ -23,7 +26,7 @@ public class Player_Movment : MonoBehaviour
          Clamp();
         if(food_score.foodScore<=0){
             Time.timeScale = 0 ;
-            gameOverPanel.SetActive(true);
+            PausePanel.SetActive(true);
         }
          
     }

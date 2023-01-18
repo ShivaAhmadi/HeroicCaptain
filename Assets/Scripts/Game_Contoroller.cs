@@ -15,8 +15,10 @@ public class Game_Contoroller : MonoBehaviour
 
     public Score_Manager score_manager;
 
-    public GameObject gamePausePanel;
+    public GameObject gameOverPanel;
     public GameObject gamePauseButton;
+    public GameObject gamePausePanel;
+
     void Start()
     {
         
@@ -40,12 +42,19 @@ public class Game_Contoroller : MonoBehaviour
     public void PauseGame() {
         Time.timeScale = 0;
         gamePausePanel.SetActive(true);
+        gameOverPanel.SetActive(false);
         gamePauseButton.SetActive(false);
+
     }
 
     public void ResumeGame() {
         Time.timeScale = 1;
         gamePausePanel.SetActive(false);
         gamePauseButton.SetActive(true);
+    }
+     public void BackHomeGame() {
+        Time.timeScale = 0;
+        gamePausePanel.SetActive(false);
+        SceneManager.LoadScene("Menu");
     }
 }

@@ -13,7 +13,6 @@ public class Rock_Movement : MonoBehaviour
         transformRock = GetComponent<Transform>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         transformRock.position -= new Vector3(0,speed * Time.deltaTime,0);
