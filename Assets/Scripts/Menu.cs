@@ -9,9 +9,11 @@ public class Menu : MonoBehaviour
     public GameObject PlayButton;
     public GameObject HelpButton;
     public GameObject ExitButton;
+    public GameObject VideoPanel;
 
     void Start()
     {
+        VideoPanel.SetActive(false);
         
     }
 
@@ -27,5 +29,11 @@ public class Menu : MonoBehaviour
     public void ExitGame() {
 
         Application.Quit();
+    }
+    public void PlayVideo() {
+        VideoPanel.SetActive(true);
+    }
+    public void BackToMenu() {
+        VideoPanel.SetActive(false);
     }
 }

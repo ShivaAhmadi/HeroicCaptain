@@ -7,26 +7,28 @@ public class Sound : MonoBehaviour
     public bool isPaused=false;
     public AudioSource sound;
 
-    // Start is called before the first frame update
     void Start()
     {
+        sound=GetComponent<AudioSource>();
         
     }
 
-    // Update is called once per frame
     void Update()
     {
+        sound.volume=0;
         
     }
 
-    public void PauseSound(){
-        if(isPaused){
-             sound.UnPause();
-             isPaused=false;
-        }
-        else{
-            sound.Pause();
-            isPaused=true;
-        }
+    public void PlaySound(){
+        sound.volume=1;
+        sound.Play();
+        // if(isPaused){
+        //      sound.UnPause();
+        //      isPaused=false;
+        // }
+        // else{
+        //     sound.Pause();
+        //     isPaused=true;
+        // }
     }
 }
