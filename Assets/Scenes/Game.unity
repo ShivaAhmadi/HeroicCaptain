@@ -1208,11 +1208,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 194b25a6dc64eda43b3245da314ae948, type: 3}
+  m_Script: {fileID: 11500000, guid: cf5aadb135a115d4e90a4339156381f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   SoundCntrolButton: {fileID: 1514233696}
-  audioOffSprite: {fileID: -1226546540, guid: d21569c399b66c44a834ae1b838a4ded, type: 3}
+  audioOffSprite: {fileID: -810054989, guid: d21569c399b66c44a834ae1b838a4ded, type: 3}
   audioOnSprite: {fileID: 1458464312, guid: d21569c399b66c44a834ae1b838a4ded, type: 3}
 --- !u!1 &524607183
 GameObject:
